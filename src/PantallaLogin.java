@@ -145,7 +145,7 @@ PantallaCrear pancrea=new PantallaCrear();//para que se pueda acceder a esta pan
     }//GEN-LAST:event_buttonResetActionPerformed
 
     private void textPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPassActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:/*jj*/
     }//GEN-LAST:event_textPassActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
