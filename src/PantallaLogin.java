@@ -141,7 +141,6 @@ PantallaCrear pancrea=new PantallaCrear();//para que se pueda acceder a esta pan
         // botton Reset
         textUser.setText(null);        //  borra lo que tenes en el texto 
         textPass.setText(null);
-        textPass.setText(null); 
         
     }//GEN-LAST:event_buttonResetActionPerformed
 
