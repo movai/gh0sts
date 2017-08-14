@@ -140,6 +140,7 @@ PantallaCrear pancrea=new PantallaCrear();//para que se pueda acceder a esta pan
     private void buttonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonResetActionPerformed
         // botton Reset
         textUser.setText(null);        //  borra lo que tenes en el texto 
+        textPass.setText(null);
         textPass.setText(null); 
         
     }//GEN-LAST:event_buttonResetActionPerformed
