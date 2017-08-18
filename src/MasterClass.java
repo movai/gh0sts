@@ -1,9 +1,10 @@
 import java.util.Scanner;
 import javax.swing.JPanel;
 
-public class Inicio {
+public class MasterClass {
     
  public static void main (String []args){
+     
        
        
        
