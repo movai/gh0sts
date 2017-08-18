@@ -121,7 +121,7 @@ PantallaCrear pancrea=new PantallaCrear();//para que se pueda acceder a esta pan
         // boton Login
         String u_name = textUser.getText();
         String p_pass = textPass.getText();
-        /*if (u_name.equals(user) && p_pass.equals(pass)) // probando con declaracion de user y password 
+        /*if (u_name.equals(user1) && p_pass.equals(pass2)) // probando con declaracion de user y password 
         {
             JOptionPane.showMessageDialog(this, "Has ingresado exitosamente!");
         } else {

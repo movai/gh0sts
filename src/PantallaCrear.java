@@ -165,19 +165,19 @@ public String retornar_contra_usuario (){
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserActionPerformed
-        // TODO add your handling code here:
+    newUser.getText();             // TODO add your handling code here:
         
     }//GEN-LAST:event_newUserActionPerformed
 
     private void newPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPassActionPerformed
-        // TODO add your handling code here:
+    newPass.getText();   // TODO add your handling code here:
     }//GEN-LAST:event_newPassActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         int cantUser = 0;
    newUser(newUser.getText(),newPass.getText());
-   JOptionPane.showMessageDialog(this, "El usuario ha sido");
+   JOptionPane.showMessageDialog(this, "El usuario ha sido creado existosamente");
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
