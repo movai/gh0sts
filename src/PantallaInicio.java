@@ -48,23 +48,23 @@ public class PantallaInicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(463, 463, 463)
+                .addGap(384, 384, 384)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addContainerGap(484, Short.MAX_VALUE))
+                .addContainerGap(415, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(152, 152, 152)
+                .addGap(153, 153, 153)
                 .addComponent(jButton2)
                 .addGap(76, 76, 76)
                 .addComponent(jButton3)
                 .addGap(74, 74, 74)
                 .addComponent(jButton1)
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
 
         pack();
