@@ -3,6 +3,8 @@
 import java.util.ArrayList; 
 import java.util.*;
 public class PantallaCrear extends javax.swing.JFrame {
+    DatosJugador jugador = new DatosJugador();
+    DatosJugador password = new DatosJugador();
 
   
     
@@ -118,8 +120,15 @@ public class PantallaCrear extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    //Datos_Jugador.jugador(getText.txtUser);    
-
+    jugador.jugador.add(txtUser.getText());
+    password.password.add(txtPass.getText());
+   
+    
+    
+   
+    
+    
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -4,9 +4,12 @@ import java.awt.Toolkit;
 import  java.awt.event.WindowEvent; 
 public class PantallaLogin extends javax.swing.JFrame {
 
+DatosJugador jugador = new DatosJugador();   // array.
+DatosJugador password = new DatosJugador();
     public PantallaLogin() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -115,19 +118,20 @@ public class PantallaLogin extends javax.swing.JFrame {
 
     private void bottonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottonLoginActionPerformed
         // boton Login
-        String u_name = textUser.getText();
-        String p_pass = textPass.getText();
-
-        if (u_name.equals("JD") && p_pass.equals("Capiro")) // probando con declaracion de user y password 
+        
+        for (int valid = 0; valid <jugador.jugador.size(); valid++) {
+            for (int valid2 = 0; valid2 < password.password.size(); valid2++) {
+                if (true) {
+                    Board toBoard = new Board();
+                    dispose();
+                    break;
+                }
+            }
+  
             
-        {
-            JOptionPane.showMessageDialog(this, "Has ingresado exitosamente!");
-            PantallaMenu Menu = new PantallaMenu(); 
-            Menu.setVisible(true);
-            dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Acceso denegado!"); 
         }
+
+
 
     }//GEN-LAST:event_bottonLoginActionPerformed
 

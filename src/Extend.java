@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 
 public class Extend extends DatosJugador {
-
+/*
     public Extend(ArrayList jugador, ArrayList password) {
         super(jugador, password);
     }
@@ -18,5 +18,5 @@ public class Extend extends DatosJugador {
     public void PasswordIn(String password) {
      super.password.add(password);
     }
-    
+    */
 }
