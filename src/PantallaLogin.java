@@ -2,6 +2,11 @@
 import javax.swing.JOptionPane;
 import java.awt.Toolkit;
 import  java.awt.event.WindowEvent; 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class PantallaLogin extends javax.swing.JFrame {
 
 DatosJugador jugador = new DatosJugador();   // array.
@@ -117,19 +122,38 @@ DatosJugador password = new DatosJugador();
     }// </editor-fold>//GEN-END:initComponents
 
     private void bottonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottonLoginActionPerformed
-        // boton Login
+        // Login Boton
         
-        for (int valid = 0; valid <jugador.jugador.size(); valid++) {
-            for (int valid2 = 0; valid2 < password.password.size(); valid2++) {
-                if (true) {
-                    Board toBoard = new Board();
-                    dispose();
-                    break;
-                }
-            }
-  
+     String tempU = textUser.getText();
+     String tempP = textPass.getText();
+     
+        try
+         {
+            Scanner input = new Scanner(new File ("src\\Data\\listUsers.csv"));         // se inicializa el directorio de la lista
+            System.out.println(input.nextLine());                               
+
             
+             while(input.hasNextLine()){                                        // mientras hayan lineas en listUsers, se repite el bucle
+               String [] array = input.nextLine().split(",");                   // se crea el array para ir linea por line y el split para identificar la coma
+               
+                   if(tempU.equals(array[0])){                                  // busca dentro de nuestro array temporal que tanto el password y user concuerden
+                  // JOptionPane.showMessageDialog(rootPane, "Success!");
+                   PantallaMenu toMenu = new PantallaMenu();
+                   toMenu.setVisible(true);
+                   dispose();
+                   break;
+                                            }
+                 
+                 }
+             
+             
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(PantallaLogin.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Error");
         }
+     
+            
+        
 
 
 

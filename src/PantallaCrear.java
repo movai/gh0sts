@@ -1,10 +1,14 @@
 
 
+import java.io.FileWriter;
 import java.util.ArrayList; 
 import java.util.*;
+import javax.swing.JOptionPane;
 public class PantallaCrear extends javax.swing.JFrame {
     DatosJugador jugador = new DatosJugador();
-    DatosJugador password = new DatosJugador();
+    DatosJugador password = new DatosJugador(); 
+ String COMMA_DELIMITER = ",";
+ String NEW_LINE_SEPARATOR = "\n";
 
   
     
@@ -120,14 +124,26 @@ public class PantallaCrear extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    jugador.jugador.add(txtUser.getText());
-    password.password.add(txtPass.getText());
-   
+    String user = txtUser.getText().toString();                  // se guardan los valores en dos variables
+    String password = txtPass.getText().toString();
+
+    // se inicia el write en el csv file
+    try{
+    FileWriter lista = new FileWriter("src\\Data\\listUsers.csv", true);
+
+    lista.write(user);              // ingresa el user en lista
+    lista.append(COMMA_DELIMITER);  // separa el user del password con una comma (user,password)
+    lista.write(password);          // ingresa el password en lista
+    lista.append(NEW_LINE_SEPARATOR); // espaciado
+    lista.flush();
+    lista.close();                      // termina el csv y lo guarda
+    JOptionPane.showMessageDialog(rootPane, "Usuario Creado!");
     
-    
-   
-    
-    
+    } catch (Exception e){
+        JOptionPane.showMessageDialog(rootPane, "Error");
+        
+    } 
+        
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
