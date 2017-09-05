@@ -1,0 +1,230 @@
+
+import javax.swing.JOptionPane;
+import java.awt.Toolkit;
+import  java.awt.event.WindowEvent; 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+public class PantallaLogin extends javax.swing.JFrame {
+
+DatosJugador jugador = new DatosJugador();   // array.
+DatosJugador password = new DatosJugador();
+    public PantallaLogin() {
+        initComponents();
+        setLocationRelativeTo(null);
+        
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        textUser = new javax.swing.JTextField();
+        bottonLogin = new javax.swing.JButton();
+        buttonReset = new javax.swing.JButton();
+        textPass = new javax.swing.JPasswordField();
+        jButton3 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        jLabel1.setText("Usuario");
+
+        jLabel2.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        jLabel2.setText("Password");
+
+        textUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textUserActionPerformed(evt);
+            }
+        });
+
+        bottonLogin.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        bottonLogin.setText("Login");
+        bottonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bottonLoginActionPerformed(evt);
+            }
+        });
+
+        buttonReset.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        buttonReset.setText("Reset");
+        buttonReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonResetActionPerformed(evt);
+            }
+        });
+
+        textPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textPassActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Back");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(292, Short.MAX_VALUE)
+                .addComponent(bottonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                .addGap(97, 97, 97)
+                .addComponent(buttonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(417, 417, 417))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(88, 88, 88)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(104, 104, 104)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(bottonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(buttonReset, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void bottonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottonLoginActionPerformed
+        // Login Boton
+        
+     String tempU = textUser.getText();
+     String tempP = textPass.getText();
+     
+        try
+         {
+            Scanner input = new Scanner(new File ("src\\Data\\listUsers.csv"));         // se inicializa el directorio de la lista
+            System.out.println(input.nextLine());                               
+
+            
+             while(input.hasNextLine()){                                        // mientras hayan lineas en listUsers, se repite el bucle
+               String [] array = input.nextLine().split(",");                   // se crea el array para ir linea por line y el split para identificar la coma
+               
+                   if(tempU.equals(array[0]) && tempP.equals(array[1])){                                  // busca dentro de nuestro array temporal que tanto el password y user concuerden
+                   JOptionPane.showMessageDialog(rootPane, "Success!");
+                   PantallaMenu toMenu = new PantallaMenu();
+                   toMenu.setVisible(true);
+                   dispose();
+                   break;
+                                            }
+                   else{
+                   }
+                   JOptionPane.showMessageDialog(rootPane, "Error!");
+                   break;
+                 }
+             
+             
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(PantallaLogin.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Error");
+        }
+     
+            
+        
+
+
+
+    }//GEN-LAST:event_bottonLoginActionPerformed
+
+    private void textUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUserActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_textUserActionPerformed
+
+    private void buttonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonResetActionPerformed
+        // botton Reset
+        textUser.setText(null);        //  borra lo que tenes en el texto 
+        textPass.setText(null); 
+        
+    }//GEN-LAST:event_buttonResetActionPerformed
+
+    private void textPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textPassActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // Boton back
+        PantallaInicio Back = new PantallaInicio();
+        Back.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PantallaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PantallaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PantallaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PantallaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PantallaLogin().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bottonLogin;
+    private javax.swing.JButton buttonReset;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPasswordField textPass;
+    private javax.swing.JTextField textUser;
+    // End of variables declaration//GEN-END:variables
+}
